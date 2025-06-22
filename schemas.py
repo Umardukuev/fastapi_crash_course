@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 
 class STaskAdd(BaseModel):
@@ -8,6 +8,8 @@ class STaskAdd(BaseModel):
 
 class STaskRead(STaskAdd):
     id: int
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class STaskID(BaseModel):
